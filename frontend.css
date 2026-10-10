@@ -1,0 +1,35 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+h1{
+    top: 50%;
+    left: 50%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    color: aqua;
+}
+#box1{
+    text-align: center;
+    justify-content: center;
+    display: flex;
+   gap: 10px;
+   padding: 20px;
+   position: relative;
+}
+#result{
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+}
+button{
+    height: 50px;
+    width: 70px;
+}

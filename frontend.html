@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="frontend.css">
+    <title>App</title>
+</head>
+<body>
+    <h1>Password Strength Checker</h1>
+    <div id="box1">
+        <input type="text" id="pwd" placeholder="Enter Password">
+        <button onclick="checkpassword()">Enter</button></div>
+    <p id="result"></p>
+    <script>
+        async function checkpassword() {
+            const password=document.getElementById("pwd").value;
+            const response=await fetch("http://127.0.0.1:5000/check",{
+                method:"POST",
+                headers:{"Content-Type":"application/json"},
+                body:JSON.stringify({password:password})
+            });
+            const data=await response.json();
+            document.getElementById("result").innerText="Strength:"+data.strength+"|Crack Time:"+data.crack_time;  
+        }
+    </script>
+</body>
+</html>
